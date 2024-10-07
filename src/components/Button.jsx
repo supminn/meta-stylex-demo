@@ -5,7 +5,7 @@ const styles = stylex.create({
   base: {
     fontSize: 18,
     backgroundColor: {
-      default: 'teal',
+      default: 'black',
       ':hover': 'blue',
     },
     color: 'white',
@@ -15,20 +15,23 @@ const styles = stylex.create({
     },
   },
   highlighted: {
+    margin: '1rem',
     backgroundColor: 'orange',
   },
   danger: {
     backgroundColor: 'red',
   },
   primary: {
+    margin: '1rem',
     backgroundColor: 'green',
   },
 });
 
-const Button = ({ text, isHighlighted, variant, style }) => {
+const Button = ({ text, isHighlighted, variant, style, theme }) => {
   return (
     <button
       {...stylex.props(
+        theme,
         styles.base,
         isHighlighted && styles.highlighted,
         styles[variant],
@@ -44,6 +47,7 @@ Button.propTypes = {
   isHighlighted: PropTypes.bool,
   variant: PropTypes.oneOf(['highlighted', 'danger', 'primary']),
   style: PropTypes.object,
+  theme: PropTypes.object,
 };
 
 export default Button;
