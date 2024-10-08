@@ -36,9 +36,3 @@ It also needs to deal with string processing as all the styles/classnames are st
 We at StyleX have a compile and work with objects instead of strings, so its faster to merge
 Fun fact: you can use naman's plugin to compile StyleX to tailwind classes if you want to use advantages of both the libraries
 
-
-- It was created in 2019 when Facebook's UI was rewamped
-- Prior to StyleX, a single page of Facebook would have about 15 to 45MB of CSS. With StyleX it is around 200-300KB (majority of FB works with one CSS bundle)
-- StyleX was introduced to solve a problem at scale. When there are 1000s of components being built and there are 100s of developers creating them, some people tend to break the CSS rules by adding complex selectors, global styles, that results to specificity wars between styles (styles would resolve differently based on how the user navigated on FB) -- whatever the user navigated to at the last, that style gets loaded last and would have the highest specificity. 
-- From day 1, they stuck to always generated atomic classes. The were ready to take the toll of having many class names (for one component) and a bit more slower speed than having one classname per component. This is the trade-off they agreed to while building.
-
